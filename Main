@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.lang.Object;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    int choice;
+    int year, month, day, hour;
+
+    System.out.println("---------------------------");
+    System.out.println("---Moon Phase Calculator---");
+    System.out.println("---------------------------");
+    System.out.println("");
+
+    System.out.println("[1] Calculate Moon Phase");
+    System.out.println("[2] Exit Program");
+    System.out.print(">>");
+
+    choice = keyboard.nextInt();
+    keyboard.nextLine();
+    System.out.println("");
+
+    if(choice == 1) {
+      System.out.print("Please enter a Year: ");
+      year = keyboard.nextInt();
+      System.out.print("Please enter a Month: ");
+      month = keyboard.nextInt();
+      System.out.print("Please enter a Day: ");
+      day = keyboard.nextInt();
+      System.out.print("Please enter an Hour: ");
+      hour = keyboard.nextInt();
+      System.out.println("");
+
+      Moon newMoon = new Moon(year, month, day, hour);
+
+      System.out.println("This is the Moon Phase calculated with minimal degree of error: " + newMoon);
+    } else {
+      System.out.println("Exiting program.");
+      System.exit(0);
+    }
+  }
+}
